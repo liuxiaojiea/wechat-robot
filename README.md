@@ -11,17 +11,19 @@ git clone git@github.com:isnl/wechat-robot.git
 ```
 
 ### 安装依赖
+依赖中需要安装`chromium`，使用npm会下载失败或者很慢，国内嘛你懂得  
+
+**强烈推荐** 使用`cnpm`  
 ```bash
-npm install
+cnpm install  //npm install
 ```
-依赖安装失败，可换淘宝源 
+实在不想用cnpm可以将npm源切换成淘宝源
 ```bash
-npm install --registry=https://registry.npm.taobao.org/
+npm config set registry https://registry.npm.taobao.org
+npm config set disturl https://npm.taobao.org/dist
+npm config set puppeteer_download_host https://npm.taobao.org/mirrors
 ```
-或者使用`cnpm`
-```bash
-cnpm install
-```
+
 ### 修改`config`配置
 打开`/config/index.js` 文件，将里面的配置改为自己的。
 
@@ -37,12 +39,12 @@ cnpm install
 
 ### 运行测试
 ```bash
-npm start
+cnpm start //npm start
 ```
 
 
 
-此工程基于 [https://github.com/gengchen528/wechatBot](https://github.com/gengchen528/wechatBot) 衍生而来。
+此项目基于 [https://github.com/gengchen528/wechatBot](https://github.com/gengchen528/wechatBot) 衍生而来。
 
 较此工程有以下几个功能：  
 - 热更新，修改代码后免重启，便于在线调试。
@@ -54,8 +56,11 @@ npm start
 - ~~采集京东联盟高佣商品，京粉转链后发送至指定群。~~
 - ~~按指令获取百度云文件，分享给用户下载链接及提取码。~~
 
-底层api基于nodejs的一个库 [wechaty](https://github.com/wechaty/wechaty)  
+![演示图片](https://ae01.alicdn.com/kf/U94ce57f9e7604d5bab549d4a6484d970T.gif)
+
+底层api都是基于nodejs的一个库 [wechaty](https://github.com/wechaty/wechaty)  
 
 更多微信消息、群消息、好友、对话等相关api可查阅官方文档 [wechaty官方文档](https://github.com/wechaty/wechaty/blob/master/docs/index.md)  
 
-有问题提issues吧
+有问题提issues  或者添加机器人微信，发送 **交流群** 即可拉你进群
+![机器人微信二维码](https://static.iiter.cn/robot-qrcode.jpg)
